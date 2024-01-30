@@ -1,0 +1,48 @@
+body {
+  font-family: "IBM Plex Sans Thai", sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #330c3b;
+  font-size:large;
+}
+
+img {
+  width: 70px;
+  margin-top: 15px;
+}
+
+h1 {
+  color: #d6d1bf;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+#leagueTable {
+  width: 80%;
+  margin-top: 20px;
+  border-collapse: collapse;
+}
+
+#leagueTable th, #leagueTable td {
+  border: 1px solid #3e3434;
+  padding: 10px;
+  text-align: center;
+  color: #000000;
+}
+
+#leagueTable th {
+  background-color: #330c3b;
+  color: white;
+}
+
+#leagueTable tbody tr:nth-child(even) {
+  background-color: #726486;
+}
+
+#leagueTable tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}

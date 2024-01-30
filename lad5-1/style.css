@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&family=Roboto:wght@100&display=swap');
+
+body{
+    font-family: "Kanit" sans-serif;
+    padding :2% ;
+    background-color: darkgrey;
+}
+form{
+    padding-top: 2%;
+}
+.login_btn{
+   margin-top: 1.5%;
+}
+.welcome{
+    font-size: x-large;
+    color: rgb(57, 128, 6);
+    border: solid 5px salmon;
+   
+}

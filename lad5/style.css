@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@1,600&family=Roboto:wght@100&display=swap');
+
+body{
+    font-family: 'Kanit', sans-serif;
+    margin: 5%;
+    margin-left: 25%;
+    margin-right: 25%;
+    background-color: rgb(87, 103, 66);
+}
+header{
+    background-color: blue;
+    color: #fcfcfc;
+    border: solid 3px rgb(34, 47, 47);
+    
+    
+}
+.game{
+    background-color: rgb(166, 206, 79);
+    padding: 2%;
+    border: solid 3px rgb(34, 47, 47);
+
+   
+}
+.secrrt{
+    width: 8%;
+    height: 100%;
+    background-color: gray;
+    border: solid 5px rgb(34, 47, 47);
+    border-radius: 50%;
+    font-size: xx-large;
+}
+
+main{
+    padding-top: 2%;
+    background-color: rgb(166, 206, 79);
+    color: black;
+    border: solid 3px rgb(45, 47, 34);
+    
+   
+}
+.btn{
+    padding: 2%;
+    
+}
+.btncheck{
+    color: #fcfcfc;
+    background-color: black;
+    padding: 1%;
+    margin-right: 2% ;
+}
+.recheck{
+    color: #fcfcfc;
+    background-color: black;
+    padding: 1%;
+    margin-left: 2% ;
+}
+.All{
+    padding-top: 5%;
+    
+    
+}
+.guess{
+    width: 45%;
+    height: 85%;
+}
+
