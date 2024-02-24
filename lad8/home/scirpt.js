@@ -32,35 +32,33 @@ const prices = [
 ];
 
 let mealQuantities = {};
-
 let totalOrderPrice = 0;
 
 function fetchMealData() {
   fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=')
   .then(response => response.json())
   .then(data => {
-      const meals = data.meals.slice(0, 25); 
-      const menuDiv = document.getElementById('menu');
-      meals.forEach((meal, index) => {
-          const mealPrice = prices[index].price;
-          const mealId = meal.idMeal;
-          menuDiv.innerHTML += `
-              <div class="meal">
-                  <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
-                  <h2>${meal.strMeal} - ${mealPrice}</h2>
-                  <p>Quantity: <span id="quantity-${mealId}">0</span></p>
-                  <button onclick="incrementQuantity('${mealId}', '${mealPrice}')">+</button>
-                  <button onclick="decrementQuantity('${mealId}', '${mealPrice}')">-</button> 
-              </div>`;
-          mealQuantities[mealId] = 0;
-      });
+    const meals = data.meals.slice(0, 25); 
+    const menuDiv = document.getElementById('menu');
+    meals.forEach((meal, index) => {
+      const mealPrice = prices[index].price;
+      const mealId = meal.idMeal;
+      const mealHtml = `
+        <div class="meal">
+          <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
+          <h2>${meal.strMeal} - ${mealPrice}</h2>
+          <p>Quantity: <span id="quantity-${mealId}">0</span></p>
+          <button onclick="incrementQuantity('${mealId}', '${mealPrice}')">+</button>
+          <button onclick="decrementQuantity('${mealId}', '${mealPrice}')">-</button> 
+        </div>`;
+      menuDiv.insertAdjacentHTML('beforeend', mealHtml);
+      mealQuantities[mealId] = 0;
+    });
   })
   .catch(error => console.error('Error fetching meal:', error));
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  fetchMealData();
-});
+document.addEventListener('DOMContentLoaded', fetchMealData);
 
 function incrementQuantity(mealId, mealPrice) {
   const priceNumber = parseFloat(mealPrice.replace('$', ''));
@@ -74,9 +72,9 @@ function decrementQuantity(mealId, mealPrice) {
   const priceNumber = parseFloat(mealPrice.replace('$', ''));
   console.log(`Decremented: ${mealId}`);
   if (mealQuantities[mealId] > 0) {
-      mealQuantities[mealId]--;
-      updateTotalOrderPrice(-priceNumber);
-      updateQuantityDisplay(mealId);
+    mealQuantities[mealId]--;
+    updateTotalOrderPrice(-priceNumber);
+    updateQuantityDisplay(mealId);
   }
 }
 
@@ -90,14 +88,13 @@ function updateQuantityDisplay(mealId) {
   const quantitySpan = document.getElementById(`quantity-${mealId}`);
   quantitySpan.textContent = mealQuantities[mealId];
 }
+
 function clearBill() {
-  totalOrderPrice = 0;
-  const totalOrderDiv = document.getElementById('totalOrder');
-  totalOrderDiv.textContent = "Total Order Price: $0.00";
-  for (const mealId in mealQuantities) {
-      mealQuantities[mealId] = 0;
-      updateQuantityDisplay(mealId);
+  if (confirm("Are you sure? This will erase your order.")) {
+    totalOrderPrice = 0;
+    mealQuantities = {};
+    document.getElementById('menu').innerHTML = '';
+    document.getElementById('totalOrder').textContent = "Total Order Price: $0.00";
+    window.location.reload();
   }
 }
-
-
