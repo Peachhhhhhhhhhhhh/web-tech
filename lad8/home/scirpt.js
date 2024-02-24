@@ -47,7 +47,7 @@ function fetchMealData() {
         <div class="meal">
           <img src="${meal.strMealThumb}" alt="${meal.strMeal}" />
           <h2>${meal.strMeal} - ${mealPrice}</h2>
-          <p>Quantity: <span id="quantity-${mealId}">0</span></p>
+          <p>Order : <span id="quantity-${mealId}">0</span></p>
           <button onclick="incrementQuantity('${mealId}', '${mealPrice}')">+</button>
           <button onclick="decrementQuantity('${mealId}', '${mealPrice}')">-</button> 
         </div>`;
