@@ -90,6 +90,14 @@ function updateQuantityDisplay(mealId) {
   const quantitySpan = document.getElementById(`quantity-${mealId}`);
   quantitySpan.textContent = mealQuantities[mealId];
 }
-
+function clearBill() {
+  totalOrderPrice = 0;
+  const totalOrderDiv = document.getElementById('totalOrder');
+  totalOrderDiv.textContent = "Total Order Price: $0.00";
+  for (const mealId in mealQuantities) {
+      mealQuantities[mealId] = 0;
+      updateQuantityDisplay(mealId);
+  }
+}
 
 
