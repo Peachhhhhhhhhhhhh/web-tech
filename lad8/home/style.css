@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 10%;
+    margin-top: 0;
+    padding: 0;
+    background-color: #afacac;
+}
+
+h1 {
+    background-color: #231616;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+
+.menu-book {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 20px; 
+}
+
+.menu-book .meal {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.menu-book .meal:hover {
+    transform: translateY(-15px);
+}
+
+.menu-book .meal img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.menu-book .meal h2 {
+    margin: 10px 0;
+    padding: 0 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#totalOrder {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px; 
+}
+
+button {
+    display:inline-block; 
+    margin: 10px auto; 
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #000000;
+    color: #cfd6f9;
+    border-radius: 5px;
+    text-align: center;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #67217d;
+}
