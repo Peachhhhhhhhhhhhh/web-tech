@@ -1,0 +1,32 @@
+[
+    {
+        "imgSrc": "07-4.jpg",
+        "name": "Dish Name 1",
+        "price": "$5.99"
+    },
+    {
+        "imgSrc": "9dbc7505-3b39-4b7f-85b4-1c88c2a01e7f.jpg",
+        "name": "Dish Name 2",
+        "price": "$7.99"
+    },
+    {
+        "imgSrc": "144C523E4D86864933.jpg",
+        "name": "Dish Name 3",
+        "price": "$5.99"
+    },
+    {
+        "imgSrc": "Stir-fried-soy-sauce-825x550.jpg",
+        "name": "Dish Name 4",
+        "price": "$6.99"
+    },
+    {
+        "imgSrc":"2cc482f6-9e80-488f-9e0a-87103f16b40d.jpg",
+        "name":"Dish Name 5",
+        "price":"$7.49"
+    },
+    {
+        "imgSrc":"download.jpg",
+        "name":"Dish Name 6",
+        "price":"$7.99"
+    }
+]
